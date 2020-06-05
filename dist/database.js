@@ -18,9 +18,10 @@ function startConnection() {
     return __awaiter(this, void 0, void 0, function* () {
         yield mongoose_1.default.connect(config_1.default.DB.LOCAL_URL_DB, {
             useNewUrlParser: true,
+            useCreateIndex: true,
             useUnifiedTopology: true
         });
-        console.log('data Base is Coneccted...');
+        console.log('[*] Data base conectada con exito a moongose...');
     });
 }
 exports.startConnection = startConnection;

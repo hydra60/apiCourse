@@ -7,4 +7,4 @@ const app_1 = __importDefault(require("./app"));
 const database_1 = require("./database");
 database_1.startConnection();
 app_1.default.listen(app_1.default.get('port'));
-console.log("el servidor esta ejecutando en el puerto ${app.get('port')}");
+console.log("[*] El servidor esta ejecutando en el puerto", app_1.default.get('port'));
