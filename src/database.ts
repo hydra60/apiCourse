@@ -5,7 +5,8 @@ export async function startConnection(){
     await mongoose.connect(config.DB.LOCAL_URL_DB,{
         useNewUrlParser: true,
         useCreateIndex: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useFindAndModify:false
 
     });
     console.log('[*] Data base conectada con exito a moongose...');

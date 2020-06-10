@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //importaciones
 const express_1 = __importDefault(require("express"));
 const route_estudiantes_1 = __importDefault(require("./routes/route.estudiantes"));
+const route_tutor_1 = __importDefault(require("./routes/route.tutor"));
 const compression_1 = __importDefault(require("compression"));
 const cors_1 = __importDefault(require("cors"));
 //inicializacion
@@ -19,4 +20,5 @@ app.use(cors_1.default());
 app.use(compression_1.default()); //? comprime las respuestas y etc
 //rutas
 app.use('/api/estudiante', route_estudiantes_1.default);
+app.use('/api/tutor', route_tutor_1.default);
 exports.default = app;

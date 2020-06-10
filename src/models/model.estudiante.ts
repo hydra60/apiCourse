@@ -9,6 +9,16 @@ const schema = new Schema({
     Telefono: {type:Number,unique:true},
     institucion: { type: String, required: true },
     uriAvatar: String,
+    asistencia: [{
+        fecha_asiste: Date,
+        curso:{ String },
+        historial:[
+            {
+                tutor:String,
+                descripcion:String
+            }
+        ]
+    }]
 });
 interface Iestudiante extends Document {
     nombre: string;
@@ -19,6 +29,16 @@ interface Iestudiante extends Document {
     Telefono: number;
     institucion: string;
     uriAvatar: string;
+    asistencia: [{
+        fecha_asiste: Date,
+        curso:string,
+        historial:[
+            {
+                tutor:string,
+                descripcion:string
+            }
+        ]
+    }]
 }
 
 export default model<Iestudiante>("estudiantes", schema);

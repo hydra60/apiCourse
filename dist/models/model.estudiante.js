@@ -10,5 +10,15 @@ const schema = new mongoose_1.Schema({
     Telefono: { type: Number, unique: true },
     institucion: { type: String, required: true },
     uriAvatar: String,
+    asistencia: [{
+            fecha_asiste: Date,
+            curso: { String },
+            historial: [
+                {
+                    tutor: String,
+                    descripcion: String
+                }
+            ]
+        }]
 });
 exports.default = mongoose_1.model("estudiantes", schema);

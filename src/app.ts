@@ -1,6 +1,7 @@
 //importaciones
 import express, { Request, Response } from "express";
-import indexrouter from './routes/route.estudiantes'
+import routerEstudiante from './routes/route.estudiantes'
+import routerTutor from './routes/route.tutor'
 import compression from 'compression';
 import cors from 'cors'
 //inicializacion
@@ -17,6 +18,7 @@ app.use(cors());
 app.use(compression()); //? comprime las respuestas y etc
 
 //rutas
-app.use('/api/estudiante',indexrouter);
+app.use('/api/estudiante',routerEstudiante);
+app.use('/api/tutor',routerTutor);
 
 export default app;
